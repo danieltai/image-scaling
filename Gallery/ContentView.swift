@@ -144,11 +144,7 @@ struct ContentView: View {
   let adjustmentFactor = 1.2
 
   var relativeScale: Double {
-    let targetScreenSize = UIScreen.main.bounds.size
-    // Account for screen orientation
-    let targetScreenWidth = min(targetScreenSize.width, targetScreenSize.height)
-
-    return targetScreenWidth / referenceScreenSize.width
+    UIScreen.main.bounds.width / referenceScreenSize.width
   }
 
   var adjustedScale: Double { relativeScale * adjustmentFactor }
